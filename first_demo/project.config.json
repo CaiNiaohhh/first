@@ -1,0 +1,18 @@
+{
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "newFeature": false,
+    "postcss": false,
+    "mockUpdate": false,
+    "minified": false
+  },
+  "appid": "ttfb548de9646f2cde",
+  "projectname": "Polar_Code",
+  "condition": {
+    "miniprogram": {
+      "current": -1
+    }
+  },
+  "projectType": "app"
+}

@@ -1,0 +1,94 @@
+<radio-group bindchange="Change_channel">
+  <view>信道选择</view>
+  <radio value = "BEC" checked>BEC</radio>
+  <radio value = "AWGN">AWGN</radio>
+</radio-group>
+<radio-group bindchange="Change_algorithm">
+  <view>译码算法选择</view>
+  <radio value = "SC" checked>SC</radio>
+  <radio value = "SCL">SCL</radio>
+</radio-group>
+<view>#################</view>
+<view class = "item">L:若选择SCL请输入L 默认值1
+  <input
+    class="page-input"
+    bindinput="inputL"
+    placeholder="点击此处输入L"
+  />
+</view>
+<view class = "item">SNR:若选择AWGN请输入SNR 默认值2
+  <input
+    class="page-input"
+    bindinput="inputSNR"
+    placeholder="点击此处输入SNR"
+  />
+</view>
+<view class = "item">N:请输入N
+  <input
+    class="page-input"
+    bindinput="inputN"
+    placeholder="点击此处输入N"
+  />
+</view>
+<view class = "item">init_value:请输入信道传输正确的概率
+  <input
+      class="page-input"
+      bindinput="inputInit_value"
+      placeholder="点击此处输入init_value"
+  />
+</view>
+<button class="btn" bindtap="JumpToPage">确认</button>
+<button class="btn" bindtap="Start">开始执行</button>
+
+<view class="page-body">
+    <view class="page-section" >
+      <view>原始信息比特</view>
+      <view class="flex-wrapper" style="flex-direction:row;">
+        <scroll-view class="scroll" scroll-x style="width: 100%">
+            <view tt:for="{{A}}" tt:for-index="i" class='item'>
+                <view hover-class="hover-item" class="flex-item" style="background-color: #73d13d">{{i}}</view>
+                <view hover-class="hover-item" class="flex-item" style="background-color: #b3cfa2">{{item}}</view>
+            </view>
+        </scroll-view>
+      </view>
+      <view>编码</view>
+      <view class="flex-wrapper" style="flex-direction:row;">
+        <scroll-view class="scroll" scroll-x style="width: 100%">
+            <view tt:for="{{B}}" tt:for-index="i" class='item'>
+                <view hover-class="hover-item" class="flex-item" style="background-color: #77813d">{{i}}</view>
+                <view hover-class="hover-item" class="flex-item" style="background-color: #868a70">{{item}}</view>
+            </view>
+        </scroll-view>
+      </view>
+      <view>接收序列</view>
+      <view class="flex-wrapper" style="flex-direction:row;">
+        <scroll-view class="scroll" scroll-x style="width: 100%">
+            <view tt:for="{{C}}" tt:for-index="i" class='item'>
+                <view hover-class="hover-item" class="flex-item" style="background-color: #77867d">{{i}}</view>
+                <view hover-class="hover-item" class="flex-item" style="background-color: #b8cabf">{{item}}</view>
+            </view>
+        </scroll-view>
+      </view>
+      <view>译码</view>
+      <view class="flex-wrapper" style="flex-direction:row;">
+        <scroll-view class="scroll" scroll-x style="width: 100%">
+            <view tt:for="{{D}}" tt:for-index="i" class='item'>
+                <view hover-class="hover-item" class="flex-item" style="background-color: #71967d">{{i}}</view>
+                <view hover-class="hover-item" class="flex-item" style="background-color: #c8d8cd">{{item}}</view>
+            </view>
+        </scroll-view>
+      </view>
+      <view>译码错误的比特序列</view>
+      <view class="flex-wrapper" style="flex-Edirection:row;">
+        <scroll-view class="scroll" scroll-x style="width: 100%">
+            <view tt:for="{{E}}" tt:for-index="i" class='item'>
+                <view hover-class="hover-item" class="flex-item" style="background-color: #86e914">{{item}}</view>
+            </view>
+        </scroll-view>
+      </view>
+
+    </view>
+
+  </view>
+  <view>######################</view>
+  <view>######################</view>

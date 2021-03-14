@@ -1,0 +1,26 @@
+{
+  "pages":[
+    "pages/test/test",
+    "pages/index/index",
+    "pages/jump/jump"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Mini Program",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+   "color": "#a9b7b7",
+   "selectedColor": "#11cd6e",
+   "borderStyle": "black" ,
+   "list": [{
+     "pagePath": "pages/test/test",
+     "text": "测试界面"
+   }, {
+     "pagePath": "pages/index/index",
+     "text": "完成界面"
+   }
+   ]
+ }
+}

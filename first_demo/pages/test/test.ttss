@@ -1,0 +1,53 @@
+.flex-wrapper {
+    margin-top: 10rpx;
+    display: flex;
+    justify-content: center;
+  }
+
+  .flex-item {
+    width: 100rpx;
+    height: 100rpx;
+    text-align: center;
+    line-height: 100rpx;
+    color: #fff;
+  }
+
+  .flex-item.hover-item {
+    opacity: 0.6;
+  }
+
+  .flex-item-v {
+    align-self: center;
+    width: 100rpx;
+    height: 100rpx;
+    text-align: center;
+    line-height: 100rpx;
+    color: #fff;
+  }
+
+  .scroll {
+    white-space: nowrap;    /*重点*/
+}
+.item {
+    display: inline-block;    /*重点*/
+    padding: 5rpx 5rpx;
+    border: 1rpx solid red;
+}
+.btn {
+  width: 80%;
+  margin-top: 20rpx;
+  background-color: rgb(125, 184, 31);
+  color: white;
+}
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.radio {
+    margin-top: 20px;
+}
+.page-input {
+  width: 600rpx;
+  height: 50rpx;
+}

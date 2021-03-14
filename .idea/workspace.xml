@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d1bc6771-a41f-47ce-996f-8ca100447a15" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/first.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/first_demo/.idea/first_demo.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/first_demo/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/first_demo/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/first_demo/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/first_demo/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/first_demo/app.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/first_demo/app.ttss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/first_demo/pages/index/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/first_demo/pages/index/index.ttml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/first_demo/pages/index/index.ttss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/first_demo/pages/jump/jump.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/first_demo/pages/jump/jump.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/first_demo/pages/jump/jump.ttml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/first_demo/pages/jump/jump.ttss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/first_demo/pages/test/test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/first_demo/pages/test/test.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/first_demo/pages/test/test.ttml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/first_demo/pages/test/test.ttss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/first_demo/project.config.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python_code/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python_code/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python_code/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python_code/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python_code/.idea/python_code.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python_code/AWGN_Decode.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python_code/AWGN_py.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python_code/BAWGNC_Encode.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python_code/Decode.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python_code/Encode.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python_code/Error_Bits.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python_code/Request.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python_code/SGA.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python_code/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python_code/cal_Bn.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python_code/cal_GN.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python_code/cal_bz.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python_code/campare.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python_code/python_server/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python_code/python_server/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python_code/python_server/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python_code/python_server/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python_code/python_server/.idea/python服务器.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python_code/python_server/server.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python_code/test.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1pjgJwP4Jse60wFwe0BevJKeIA8" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d1bc6771-a41f-47ce-996f-8ca100447a15" name="Default Changelist" comment="" />
+      <created>1615701844580</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1615701844580</updated>
+    </task>
+    <servers />
+  </component>
+</project>
