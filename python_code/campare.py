@@ -229,7 +229,7 @@ def draw_correct_L(name, N, cnt, init_value, L_list, SNR):
         if name == "BEC":
             valid_index_list, o_msg, y_msg = Encode.Polar_Encode(valid_msg, N, K, init_value)
             # 假设传输过程中有BEC_Error*N个比特出错
-            error_bit_list = Error_Bits.error_bits(N, int(1-BEC_Error*N))
+            error_bit_list = Error_Bits.error_bits(N, int((1-BEC_Error)*N))
             for err_bit in error_bit_list:
                 y_msg[err_bit] = 2  # 设置为2表示传输过程中出错了
             u_msg = np.zeros(N, dtype='uint8')  # 保存计算结果
@@ -244,7 +244,7 @@ def draw_correct_L(name, N, cnt, init_value, L_list, SNR):
             else:
                 u_scl_res = AWGN_Decode.AWGN_SCL_Decode(L_list[j],valid_index_list,N,y_msg,u)
             c2_list[j] += cmp_bits(o_msg, u_scl_res, valid_index_list)
-        print(c2_list)
+            print(c2_list)
     c1 = c1 / (K * cnt)
     for i in range(len(L_list)):
         c2_list[i] = c2_list[i] / (K * cnt)
@@ -258,7 +258,7 @@ def draw_correct_L(name, N, cnt, init_value, L_list, SNR):
 
 if __name__ == "__main__":
     '''
-    参数说明:
+    参数说明
         N: 码长
         init_value: 信道传输的有效概率
         L: SCL中保留前L个计算结果

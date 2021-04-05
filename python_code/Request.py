@@ -34,13 +34,13 @@ def alert(valid_index_list, u_message, y_message):
     print("原始信息:", u_message)
     print("极化编码后信息:", y_message)
 
-def solve_ABC(A, u_message, y_message, B, N, K, C):
+def solve_ABC(A, u_message, y_message, B, N, K, C, bec_err):
     for i in range(len(u_message)):
         A[i] = u_message[i]
     for i in range(len(y_message)):
         B[i] = y_message[i]
-    # 假设BEC信道的擦除概率是(N+K)//2
-    error_bit_list = Error_Bits.error_bits(N, (N+K)//2)
+    # BEC信道的擦除概率是bec_err
+    error_bit_list = Error_Bits.error_bits(N, int((1-bec_err)*N))
     for err_bit in error_bit_list:
         y_message[err_bit] = 2  # 设置为2表示传输过程中出错了
     print("添加噪声之后的编码信息:", y_message)
@@ -55,11 +55,11 @@ def AWGN_solve_ABC(y_msg, A, u_message, y_message, B, N, K, C):
     for i in range(len(y_message)):
         C[i] = y_message[i]
 
-def BEC_SC(N, init_value):
+def BEC_SC(N, init_value, bec_err):
     A, B, C, D, E, K, u_msg, valid_msg = solve_pre(N, init_value)
     valid_index_list, u_message, y_message = Encode.Polar_Encode(valid_msg, N, K, init_value)
     alert(valid_index_list, u_message, y_message)
-    solve_ABC(A, u_message, y_message, B, N, K, C)
+    solve_ABC(A, u_message, y_message, B, N, K, C, bec_err)
     u_res = Decode.Polar_Decode(valid_index_list, N, y_message, u_msg)
     print("SC极化译码后信息:", u_res)
     for i in range(len(u_res)):
@@ -68,11 +68,11 @@ def BEC_SC(N, init_value):
     return res
 
 
-def BEC_SCL(N, init_value, L):
+def BEC_SCL(N, init_value, L, bec_err):
     A, B, C, D, E, K, u_msg, valid_msg = solve_pre(N, init_value)
     valid_index_list, u_message, y_message = Encode.Polar_Encode(valid_msg, N, K, init_value)
     alert(valid_index_list, u_message, y_message)
-    solve_ABC(A, u_message, y_message, B, N, K, C)
+    solve_ABC(A, u_message, y_message, B, N, K, C, bec_err)
     u_res = Decode.SCL_Decode(L, valid_index_list, N, y_message)
     print("SCL极化译码后信息:", u_res)
     for i in range(len(u_res)):
