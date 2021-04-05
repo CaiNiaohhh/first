@@ -264,6 +264,7 @@ if __name__ == "__main__":
         L: SCL中保留前L个计算结果
         cnt: 验证准确性时所运行的次数
         BEC_Error: BEC擦除信道的出错概率
+        
     '''
     N = 1024
     init_value = 0.5
