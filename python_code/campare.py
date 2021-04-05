@@ -258,13 +258,12 @@ def draw_correct_L(name, N, cnt, init_value, L_list, SNR):
 
 if __name__ == "__main__":
     '''
-    参数说明
+    参数说明:
         N: 码长
         init_value: 信道传输的有效概率
         L: SCL中保留前L个计算结果
         cnt: 验证准确性时所运行的次数
         BEC_Error: BEC擦除信道的出错概率
-        
     '''
     N = 1024
     init_value = 0.5
