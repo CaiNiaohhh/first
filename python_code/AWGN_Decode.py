@@ -1,10 +1,12 @@
 import numpy, math, copy
 import numpy as np
 from BAWGNC_Encode import encode
+import cal_Bn
 
 def cal_llr(i, N, y_msg, u_msg, u):
     if N == 1:
         llr = (2 * float(y_msg[0])) / u
+        # llr = float(y_msg[0])
     else:
         if i % 2 == 0:
             llr_1 = cal_llr(i // 2,
@@ -15,9 +17,19 @@ def cal_llr(i, N, y_msg, u_msg, u):
                             N // 2,
                             y_msg[N // 2:],
                             u_msg[1::2][:(i // 2)], u)
-            p1 = math.exp(llr_1 + llr_2) + 1
-            p2 = math.exp(llr_1) + math.exp(llr_2)
-            llr = math.log(p1 / p2)
+            # print("llr1:", llr_1)
+            # print("llr2:", llr_2)
+            # p1 = math.exp(llr_1 + llr_2) + 1
+            # p2 = math.exp(llr_1) + math.exp(llr_2)
+            # llr = math.log(p1 / p2)
+            # print("llr_all:", llr)
+            if abs(llr_1) > 44 and abs(llr_2) > 44:
+                if llr_1 * llr_2 > 0:
+                    llr = min(abs(llr_1), abs(llr_2))
+                else:
+                    llr = -min(abs(llr_1), abs(llr_2))
+            else:
+                llr = 2 * np.arctanh(np.tanh(llr_1 / 2) * np.tanh(llr_2 / 2))
 
         else:
             llr_1 = cal_llr((i - 1) // 2,
@@ -39,6 +51,8 @@ def Polar_Decode(valid_index_list, N, y_msg, u):
         u_msg[index] = 0 if llr >= 0 else 1
         # print(index, ":", u_msg[index])
     # print(u_msg)
+    # BN = cal_Bn.cal_BN(N)
+    # u_msg = numpy.dot(BN, u_msg)
     return u_msg
 
 
@@ -98,7 +112,7 @@ def AWGN_SCL_Decode(L, valid_index_list, N, y_msg, u):
         for _ in range(count):
             PM.append(['', 0])
         cnt //= 2
-    # print(PM)
+    # print(PM[0][0])
     return list(PM[0][0])
 
 
@@ -109,8 +123,10 @@ if __name__ == "__main__":
     L = 4
     # X表示编码前的信息， y_msg表示接收到的信息
     init_value, SNR = 1, 1.3
-    valid_index_list, X, _, y_msg, u = encode([1, 0, 1] * N, N, init_value, SNR)
-    l1 = AWGN_SCL_Decode(1, valid_index_list, N, y_msg, u)
+    # valid_index_list, X, _, y_msg, u = encode([1, 0, 1] * N, N, init_value, SNR)
+    # l1 = AWGN_SCL_Decode(1, valid_index_list, N, y_msg, u)
+    valid_index_list = [1,2,3]
+    y_msg = [-1.37, 2.00, 0.22, 2.04]
     lL = AWGN_SCL_Decode(L, valid_index_list, N, y_msg, u)
     # l2 = Polar_Decode(valid_index_list, N, y_msg)
     # for i in range(N):

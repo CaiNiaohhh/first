@@ -3,6 +3,8 @@ K = 4 # 消息比特数
 
 import numpy as np
 # 计算巴氏参数
+# 假设出错概率是x,则两条递归公式中的值为(2x - x^2)&&(x^2)
+# 算法的复杂度为log(N)
 def cal_z(i, N, init_value = 0.5):
     if i == 0 and N == 1:
         return init_value

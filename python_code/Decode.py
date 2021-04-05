@@ -1,13 +1,13 @@
-import math, copy
+import math, copy, numpy
 import numpy as np
-import Encode, Error_Bits
+import Encode, Error_Bits, cal_Bn
 
 def cal_llr(i, N, y_msg, u_msg):
     if i == 0 and N == 1:
         if y_msg[i] == 1:
-            llr = -100
+            llr = -10000
         elif y_msg[i] == 0:
-            llr = 100
+            llr = 10000
         else:
             llr = 0
     else:
@@ -21,17 +21,28 @@ def cal_llr(i, N, y_msg, u_msg):
                            y_msg[N // 2:],
                            u_msg[1::2][:(i // 2)])
             # print("   llr_1:", llr_1, "llr_2:", llr_2)
-            if llr_2 + llr_1 > 100:
-                llr = 100
-            elif llr_1 > 100 or llr_2 > 100:
-                llr = -100
-            else:
-                p1 = math.exp(llr_1 + llr_2) + 1
-                p2 = math.exp(llr_1) + math.exp(llr_2)
-                if p2 == 0:
-                    llr = 100
+            # if llr_2 + llr_1 > 100:
+            #     llr = 100
+            # elif llr_1 > 100 or llr_2 > 100:
+            #     llr = -100
+            # else:
+            #     p1 = math.exp(llr_1 + llr_2) + 1
+            #     p2 = math.exp(llr_1) + math.exp(llr_2)
+            #     if p2 == 0:
+            #         llr = 100
+            #     else:
+            #         llr = math.log(p1 / p2)
+            # p1 = math.exp(llr_1 + llr_2) + 1
+            # p2 = math.exp(llr_1) + math.exp(llr_2)
+            # llr = math.log(p1 / p2)
+            if abs(llr_1) > 44 and abs(llr_2) > 44:
+                if llr_1 * llr_2 > 0:
+                    llr = min(abs(llr_1), abs(llr_2))
                 else:
-                    llr = math.log(p1 / p2)
+                    llr = -min(abs(llr_1), abs(llr_2))
+            else:
+                llr = 2 * np.arctanh(np.tanh(llr_1 / 2) * np.tanh(llr_2 / 2))
+
 
         else:
             llr_1 = cal_llr((i - 1) // 2,

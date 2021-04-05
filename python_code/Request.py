@@ -39,8 +39,8 @@ def solve_ABC(A, u_message, y_message, B, N, K, C):
         A[i] = u_message[i]
     for i in range(len(y_message)):
         B[i] = y_message[i]
-    # 假设传输过程中有N-K个比特出错
-    error_bit_list = Error_Bits.error_bits(N, K)
+    # 假设BEC信道的擦除概率是(N+K)//2
+    error_bit_list = Error_Bits.error_bits(N, (N+K)//2)
     for err_bit in error_bit_list:
         y_message[err_bit] = 2  # 设置为2表示传输过程中出错了
     print("添加噪声之后的编码信息:", y_message)

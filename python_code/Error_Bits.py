@@ -16,5 +16,5 @@ def error_bits(N, K):
     return res_list
 
 if __name__ == "__main__":
-    L = error_bits(8, 6)
+    L = error_bits(8, 4)
     print(L)
