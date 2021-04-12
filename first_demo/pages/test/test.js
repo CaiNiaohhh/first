@@ -4,6 +4,7 @@ Page({
     N: 0,
     L: 1,
     SNR: 2,
+    bec_err:0.3,
     init_value: 0.0,
     channel: "BEC",
     algorithm: "SC",
@@ -11,17 +12,18 @@ Page({
   },
   JumpToPage: function (e) {
     let that = this;
-    console.log("N = ", this.data.N, " init_value = ", this.data.init_value)
+    console.log("N = ", this.data.N, " init_value = ", this.data.init_value, " bec_err = ", this.data.bec_err)
     console.log("L = ", this.data.L, " channel = ", this.data.channel)
     console.log("algorithm = ", this.data.algorithm, "SNR = ", this.data.SNR)
     let SN = "N="+this.data.N + "&&"
     let Sinitvalue = "init_value="+this.data.init_value + "&&"
     let SL = "L="+this.data.L + "&&"
     let SSNR = "SNR="+this.data.SNR + "&&"
+    let Sbec_err = "bec_err="+this.data.bec_err + "&&"
     let Schannel = "channel="+this.data.channel + "&&"
     let Salgorithm = "algorithm="+this.data.algorithm
     tt.request({
-      url: "http://172.26.82.213:5000/?" + SN + Sinitvalue + SL + SSNR + Schannel + Salgorithm,
+      url: "http://127.0.0.1:5000/?" + SN + Sinitvalue + SL + SSNR + Sbec_err + Schannel + Salgorithm,
       success:function(res){
         let Data = res.data
         console.log("success", Data)
@@ -57,6 +59,9 @@ Page({
   },
   inputSNR: function (e) {
     this.data.SNR = e.detail.value
+  },
+  input_bec_err: function (e) {
+    this.data.bec_err = e.detail.value
   },
   Change_channel: function (e) {
     this.data.channel = e.detail.value

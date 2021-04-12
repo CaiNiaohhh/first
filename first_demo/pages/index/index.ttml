@@ -23,6 +23,13 @@
     placeholder="点击此处输入SNR"
   />
 </view>
+<view class = "item">bec_err:[信道传输出错概率]默认值0.3
+  <input
+    class="page-input"
+    bindinput="input_bec_err"
+    placeholder="点击此处输入bec_err"
+  />
+</view>
 <view class = "item">N:请输入N
   <input
     class="page-input"
@@ -30,7 +37,7 @@
     placeholder="点击此处输入N"
   />
 </view>
-<view class = "item">init_value:请输入信道传输正确的概率
+<view class = "item">init_value:请输入码率(有效信息位占比)
   <input
       class="page-input"
       bindinput="inputInit_value"
@@ -46,7 +53,8 @@
       <view class="flex-wrapper" style="flex-direction:row;">
         <scroll-view class="scroll" scroll-x style="width: 100%">
             <view tt:for="{{A}}" tt:for-index="i" class='item'>
-                <view hover-class="hover-item" class="flex-item" style="background-color: #73d13d">{{i}}->{{item}}</view>
+                <view hover-class="hover-item" class="flex-item" style="background-color: #73d13d">{{i}}</view>
+                <view hover-class="hover-item" class="flex-item" style="background-color: #b3cfa2">{{item}}</view>
             </view>
         </scroll-view>
       </view>
@@ -54,15 +62,17 @@
       <view class="flex-wrapper" style="flex-direction:row;">
         <scroll-view class="scroll" scroll-x style="width: 100%">
             <view tt:for="{{B}}" tt:for-index="i" class='item'>
-                <view hover-class="hover-item" class="flex-item" style="background-color: #77813d">{{i}}->{{item}}</view>
+                <view hover-class="hover-item" class="flex-item" style="background-color: #77813d">{{i}}</view>
+                <view hover-class="hover-item" class="flex-item" style="background-color: #868a70">{{item}}</view>
             </view>
         </scroll-view>
       </view>
-      <view>物理信道传输[有可能出错]</view>
+      <view>接收序列</view>
       <view class="flex-wrapper" style="flex-direction:row;">
         <scroll-view class="scroll" scroll-x style="width: 100%">
             <view tt:for="{{C}}" tt:for-index="i" class='item'>
-                <view hover-class="hover-item" class="flex-item" style="background-color: #77867d">{{i}}->{{item}}</view>
+                <view hover-class="hover-item" class="flex-item" style="background-color: #77867d">{{i}}</view>
+                <view hover-class="hover-item" class="flex-item" style="background-color: #b8cabf">{{item}}</view>
             </view>
         </scroll-view>
       </view>
@@ -70,7 +80,8 @@
       <view class="flex-wrapper" style="flex-direction:row;">
         <scroll-view class="scroll" scroll-x style="width: 100%">
             <view tt:for="{{D}}" tt:for-index="i" class='item'>
-                <view hover-class="hover-item" class="flex-item" style="background-color: #71967d">{{i}}->{{item}}</view>
+                <view hover-class="hover-item" class="flex-item" style="background-color: #71967d">{{i}}</view>
+                <view hover-class="hover-item" class="flex-item" style="background-color: #c8d8cd">{{item}}</view>
             </view>
         </scroll-view>
       </view>
@@ -86,3 +97,5 @@
     </view>
 
   </view>
+  <view>######################</view>
+  <view>######################</view>

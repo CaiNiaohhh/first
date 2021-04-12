@@ -21,7 +21,7 @@ Page({
     let Schannel = "channel="+this.data.channel + "&&"
     let Salgorithm = "algorithm="+this.data.algorithm
     tt.request({
-      url: "http://172.26.147.150:5000/?" + SN + Sinitvalue + SL + SSNR + Schannel + Salgorithm,
+      url: "http://172.26.224.29:5000/?" + SN + Sinitvalue + SL + SSNR + Schannel + Salgorithm,
       success:function(res){
         let Data = res.data
         console.log("success", Data)

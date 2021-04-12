@@ -23,6 +23,13 @@
     placeholder="点击此处输入SNR"
   />
 </view>
+<view class = "item">bec_err:[信道传输出错概率]默认值0.3
+  <input
+    class="page-input"
+    bindinput="input_bec_err"
+    placeholder="点击此处输入bec_err"
+  />
+</view>
 <view class = "item">N:请输入N
   <input
     class="page-input"
@@ -30,7 +37,7 @@
     placeholder="点击此处输入N"
   />
 </view>
-<view class = "item">init_value:请输入信道传输正确的概率
+<view class = "item">init_value:请输入码率(有效信息位占比)
   <input
       class="page-input"
       bindinput="inputInit_value"
