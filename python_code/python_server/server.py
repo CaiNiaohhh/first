@@ -34,8 +34,6 @@ def http_test():
     # 当信道类型是AWGN&&译码算法是SCL
     if channel == "AWGN" and algorithm == "SCL":
         res = Request.AWGN_SCL(N, init_value, SNR, L)
-
-    # res除了返回编码译码的比特之外 还应该返回译码出现错误的比特位
     return res
 
 if __name__ == "__main__":
