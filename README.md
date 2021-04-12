@@ -1,5 +1,5 @@
 # polar code by python
-本科毕业设计: 微信联系aizhuboy
+本科毕业设计:仅供参考 不保证完全正确
 
 run:
 python python_code/python_server/server.py, As the request param detail, you can see the source code(server.py), quite simple.
